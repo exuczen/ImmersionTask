@@ -61,7 +61,7 @@ public class PlayerControllerScript : MonoBehaviour
     {
         Vector3 localEuler = transform.localEulerAngles;
         localEuler.x = localEuler.z = 0f;
-        float mouseY = 0f, mouseX = 0f;
+        float mouseY = 0f, mouseX;
         if (Input.GetKey(KeyCode.LeftShift) && (Input.GetMouseButton(0) || Input.GetMouseButton(1)))
         {
             mouseY = Input.GetAxis("Mouse Y");
@@ -70,7 +70,7 @@ public class PlayerControllerScript : MonoBehaviour
         }
         transform.localEulerAngles = localEuler;
         if (_cameraDriver)
-            _cameraDriver.UpdateTransformRotationWithMouse(transform, mouseY, deltaTime);
+            _cameraDriver.UpdateTransformRotationWithMouse(mouseY, deltaTime);
     }
 
     private void JumpOnKeyDown(KeyCode keyCode)
