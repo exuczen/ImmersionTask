@@ -8,8 +8,7 @@ using System;
 
 public class PlayerControllerScript : MonoBehaviour
 {
-    [SerializeField]
-    private TextMessageEvent _playerStateMessage = default;
+    [SerializeField] private TextMessageEvent _playerStateMessage = default;
 
     protected CameraDriverScript _cameraDriver = default;
     protected Rigidbody _rigidbody = default;

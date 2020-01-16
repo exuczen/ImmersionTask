@@ -6,12 +6,9 @@ using MustHave.Utilities;
 
 public class EnemyAgentScript : MonoBehaviour
 {
-    [SerializeField]
-    private float _driveSpeed = default;
-    [SerializeField]
-    private Transform _leftSensor = default;
-    [SerializeField]
-    private Transform _rightSensor = default;
+    [SerializeField] private float _driveSpeed = default;
+    [SerializeField] private Transform _leftSensor = default;
+    [SerializeField] private Transform _rightSensor = default;
 
     private const float VELOCITY_DAMPING = 5f;
 

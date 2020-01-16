@@ -8,22 +8,14 @@ using UnityEngine.UI;
 
 public class GameCanvasScript : MonoBehaviour
 {
-    [SerializeField]
-    private MessageBus _messageBus = default;
-    [SerializeField]
-    private TextMessageEvent _playerStateMessage = default;
-    [SerializeField]
-    private TextMessageEvent _powerupLogMessage = default;
-    [SerializeField]
-    private BoolMessageEvent _enemyTargetMessage = default;
-    [SerializeField]
-    private Text _playerStateText = default;
-    [SerializeField]
-    private Text _powerupLogText = default;
-    [SerializeField]
-    private Image _targetImage = default;
-    [SerializeField]
-    private Text _fpsText = default;
+    [SerializeField] private MessageBus _messageBus = default;
+    [SerializeField] private TextMessageEvent _playerStateMessage = default;
+    [SerializeField] private TextMessageEvent _powerupLogMessage = default;
+    [SerializeField] private BoolMessageEvent _enemyTargetMessage = default;
+    [SerializeField] private Text _playerStateText = default;
+    [SerializeField] private Text _powerupLogText = default;
+    [SerializeField] private Image _targetImage = default;
+    [SerializeField] private Text _fpsText = default;
 
     private float _fps = default;
 

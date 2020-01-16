@@ -7,18 +7,12 @@ using MustHave.Utilities;
 
 public class EnemyHandlerScript : MonoBehaviour
 {
-    [SerializeField, Range(1, 10)]
-    private int enemiesCount = default;
-    [SerializeField]
-    private EnemyScript[] _enemyPrefabs = default;
-    [SerializeField]
-    private Transform _target = default;
-    [SerializeField]
-    private Transform _particlesContainer = default;
-    [SerializeField]
-    private SpriteGridScript _groundFloorGrid = default;
-    [SerializeField]
-    private SpriteGridScript _firstFloorGrid = default;
+    [SerializeField, Range(1, 10)] private int enemiesCount = default;
+    [SerializeField] private EnemyScript[] _enemyPrefabs = default;
+    [SerializeField] private Transform _target = default;
+    [SerializeField] private Transform _particlesContainer = default;
+    [SerializeField] private SpriteGridScript _groundFloorGrid = default;
+    [SerializeField] private SpriteGridScript _firstFloorGrid = default;
 
     private List<Vector3Int> _groundFloorGridCellsPool = default;
     private List<Vector3Int> _firstFloorGridCellsPool = default;

@@ -10,18 +10,12 @@ using UnityEngine.UI;
 
 public class PowerupHandlerScript : MonoBehaviour
 {
-    [SerializeField, Range(1, 3)]
-    private int _damagePowerupsCount = default;
-    [SerializeField, Range(1, 3)]
-    private int _speedPowerupsCount = default;
-    [SerializeField, Range(1, 3)]
-    private int _flyPowerupsCount = default;
-    [SerializeField]
-    private TextMessageEvent _logMessage = default;
-    [SerializeField]
-    private PowerupScript[] _powerupPrefabs = default;
-    [SerializeField]
-    private SpriteGridScript _floorGrid = default;
+    [SerializeField, Range(1, 3)] private int _damagePowerupsCount = default;
+    [SerializeField, Range(1, 3)] private int _speedPowerupsCount = default;
+    [SerializeField, Range(1, 3)] private int _flyPowerupsCount = default;
+    [SerializeField] private TextMessageEvent _logMessage = default;
+    [SerializeField] private PowerupScript[] _powerupPrefabs = default;
+    [SerializeField] private SpriteGridScript _floorGrid = default;
 
     private Dictionary<Type, PowerupScript> _powerupPrefabsDict = new Dictionary<Type, PowerupScript>();
     private Dictionary<Type, PowerupScript> _powerupsDict = new Dictionary<Type, PowerupScript>();

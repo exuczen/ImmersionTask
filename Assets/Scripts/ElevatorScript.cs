@@ -6,10 +6,8 @@ using MustHave;
 
 public class ElevatorScript : MonoBehaviour
 {
-    [SerializeField]
-    private float _groundFloorY = default;
-    [SerializeField]
-    private float _firstFloorY = default;
+    [SerializeField] private float _groundFloorY = default;
+    [SerializeField] private float _firstFloorY = default;
 
     private const float CONTACT_DURATION = 1f;
     private const float SHIFT_DURATION = 2f;

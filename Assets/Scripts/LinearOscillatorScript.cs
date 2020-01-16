@@ -6,14 +6,10 @@ using UnityEngine.Animations;
 
 public class LinearOscillatorScript : MonoBehaviour
 {
-    [SerializeField]
-    private Axis _axis = default;
-    [SerializeField]
-    private bool _absolute = default;
-    [SerializeField]
-    private float _frequency = 1f;
-    [SerializeField]
-    private float _amplitude = 1f;
+    [SerializeField] private Axis _axis = default;
+    [SerializeField] private bool _absolute = default;
+    [SerializeField] private float _frequency = 1f;
+    [SerializeField] private float _amplitude = 1f;
 
     private const float PI2 = (Mathf.PI * 2f);
 

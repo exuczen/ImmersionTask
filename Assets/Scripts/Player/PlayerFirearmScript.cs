@@ -5,16 +5,11 @@ using MustHave.Utilities;
 using MustHave;
 public class PlayerFirearmScript : MonoBehaviour
 {
-    [SerializeField]
-    private BulletScript _bulletPrefab = default;
-    [SerializeField]
-    private Transform _bulletsContainer = default;
-    [SerializeField, Range(0, 2)]
-    private int _mouseButtonIndex = default;
-    [SerializeField, Range(0f, 1f)]
-    private float _shootingInterval = default;
-    [SerializeField]
-    private float _muzzleVelocity = default;
+    [SerializeField] private BulletScript _bulletPrefab = default;
+    [SerializeField] private Transform _bulletsContainer = default;
+    [SerializeField, Range(0, 2)] private int _mouseButtonIndex = default;
+    [SerializeField, Range(0f, 1f)] private float _shootingInterval = default;
+    [SerializeField] private float _muzzleVelocity = default;
 
     private Rigidbody _playerRigidbody = default;
     private Coroutine _shootingRoutine = default;

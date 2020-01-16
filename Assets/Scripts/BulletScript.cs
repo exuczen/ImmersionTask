@@ -5,10 +5,8 @@ using MustHave.Utilities;
 
 public class BulletScript : MonoBehaviour
 {
-    [SerializeField]
-    private ParticleSystem _hitParticlesConePrefab = default;
-    [SerializeField]
-    private int _damageHP = default;
+    [SerializeField] private ParticleSystem _hitParticlesConePrefab = default;
+    [SerializeField] private int _damageHP = default;
 
     public int DamageHP { get => _damageHP; }
 

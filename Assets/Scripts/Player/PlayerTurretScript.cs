@@ -6,14 +6,10 @@ using MustHave.Utilities;
 
 public class PlayerTurretScript : MonoBehaviour
 {
-    [SerializeField]
-    private BoolMessageEvent _enemyTargetMessage = default;
-    [SerializeField]
-    private PlayerFirearmScript[] _firearms = default;
-    [SerializeField]
-    private Transform _targetMark = default;
-    [SerializeField]
-    private float _raycastDistance = default;
+    [SerializeField] private BoolMessageEvent _enemyTargetMessage = default;
+    [SerializeField] private PlayerFirearmScript[] _firearms = default;
+    [SerializeField] private Transform _targetMark = default;
+    [SerializeField] private float _raycastDistance = default;
 
     private int _raycastMask = default;
 

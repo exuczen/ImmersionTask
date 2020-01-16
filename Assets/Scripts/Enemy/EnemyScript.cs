@@ -5,12 +5,9 @@ using MustHave.Utilities;
 
 public class EnemyScript : MonoBehaviour
 {
-    [SerializeField]
-    private int _fullHealthPoints = default;
-    [SerializeField]
-    private TextMesh _healthTextMesh = default;
-    [SerializeField]
-    private ParticleSystem _hitParticlesHemispherePrefab = default;
+    [SerializeField] private int _fullHealthPoints = default;
+    [SerializeField] private TextMesh _healthTextMesh = default;
+    [SerializeField] private ParticleSystem _hitParticlesHemispherePrefab = default;
 
     private int _healthPoints = default;
     private Material _material = default;

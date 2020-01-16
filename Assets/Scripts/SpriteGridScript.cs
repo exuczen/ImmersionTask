@@ -6,8 +6,7 @@ using MustHave.Utilities;
 [RequireComponent(typeof(Grid))]
 public class SpriteGridScript : MonoBehaviour
 {
-    [SerializeField]
-    private bool _activeOnStart = default;
+    [SerializeField] private bool _activeOnStart = default;
 
     private Grid _grid = default;
     private List<Vector3Int> _spriteCells = new List<Vector3Int>();

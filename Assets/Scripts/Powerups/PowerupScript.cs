@@ -4,12 +4,9 @@ using UnityEngine;
 
 public abstract class PowerupScript : MonoBehaviour
 {
-    [SerializeField]
-    protected string _logName = default;
-    [SerializeField]
-    private float _duration = default;
-    [SerializeField]
-    protected float _multiplier = default;
+    [SerializeField] protected string _logName = default;
+    [SerializeField] private float _duration = default;
+    [SerializeField] protected float _multiplier = default;
 
     private Coroutine _routine = default;
     private float _startTime = default;

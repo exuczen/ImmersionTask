@@ -4,10 +4,8 @@ using UnityEngine;
 
 public class PlayerScript : MonoBehaviour
 {
-    [SerializeField]
-    private PlayerTurretScript _turret = default;
-    [SerializeField]
-    private PlayerChassisScript _chassis = default;
+    [SerializeField] private PlayerTurretScript _turret = default;
+    [SerializeField] private PlayerChassisScript _chassis = default;
 
     private PlayerControllerScript _controller = default;
     private PlayerFlyControllerScript _flyController = default;
