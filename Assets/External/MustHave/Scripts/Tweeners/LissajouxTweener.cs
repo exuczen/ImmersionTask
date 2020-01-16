@@ -7,16 +7,11 @@ namespace MustHave.Tweeners
 {
     public class LissajouxTweener : MonoBehaviour
     {
-        [SerializeField]
-        private float _frequencyScale = 1f;
-        [SerializeField]
-        private float _totalPhaseDivPI = 0f;
-        [SerializeField]
-        private Vector3Int _frequency = Vector3Int.zero;
-        [SerializeField]
-        private Vector3 _amplitude = Vector3.zero;
-        [SerializeField]
-        private Vector3 _phaseDivPI = Vector3.zero;
+        [SerializeField] private float _frequencyScale = 1f;
+        [SerializeField] private float _totalPhaseDivPI = 0f;
+        [SerializeField] private Vector3Int _frequency = Vector3Int.zero;
+        [SerializeField] private Vector3 _amplitude = Vector3.zero;
+        [SerializeField] private Vector3 _phaseDivPI = Vector3.zero;
 
         private Vector3 _initialPosition = default;
         private Coroutine _updateRoutine = default;
@@ -50,9 +45,9 @@ namespace MustHave.Tweeners
                 Vector3 frequency = _frequency;
                 frequency *= _frequencyScale;
                 Vector3 phase = (_phaseDivPI + Vector3.one * _totalPhaseDivPI) * Mathf.PI;
-                Vector3 translation = Maths.Mul(_amplitude, Maths.Sin(frequency * elapsedTime + phase));
+                Vector3 translation = Mathv.Mul(_amplitude, Mathv.Sin(frequency * elapsedTime + phase));
                 transform.localPosition = _initialPosition + translation;
             });
         }
-    } 
+    }
 }

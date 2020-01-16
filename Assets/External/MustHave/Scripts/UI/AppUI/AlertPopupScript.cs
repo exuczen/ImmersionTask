@@ -91,16 +91,15 @@ namespace MustHave.UI
 
         public void ShowNotImplementedWarning(Action action = null)
         {
-            _dismissButtonAction = action;
-            ShowWithConfirmButton(WARNING_NOT_IMPLEMENTED, action);
+            ShowWithConfirmButton(WARNING_NOT_IMPLEMENTED, action, false);
         }
 
-        public void ShowWithConfirmButton(string text, Action action = null)
+        public void ShowWithConfirmButton(string text, Action action = null, bool invokeActionOnHide = true)
         {
-            _dismissButtonAction = action;
             SetButtons(ActionWithText.Create(BUTTON_OK, action));
             SetText(text);
             Show();
+            _dismissButtonAction = invokeActionOnHide ? action : null;
         }
 
         public void ShowQuitWarning()
@@ -113,8 +112,8 @@ namespace MustHave.UI
         {
             if (_dismissButton.interactable)
             {
-                HideWithAnimator(_dismissButtonAction != null, () => {
-                    _dismissButtonAction.Invoke();
+                HideWithAnimator(() => {
+                    _dismissButtonAction?.Invoke();
                     _dismissButtonAction = null;
                 });
                 _onButtonClickActions = null;
@@ -131,9 +130,7 @@ namespace MustHave.UI
                 {
                     if (buttonAction.DismissWithAnimator)
                     {
-                        HideWithAnimator(buttonAction.action != null, () => {
-                            buttonAction.action.Invoke();
-                        });
+                        HideWithAnimator(() => { buttonAction.action?.Invoke(); });
                     }
                     else
                     {
@@ -170,15 +167,14 @@ namespace MustHave.UI
             OnHide();
         }
 
-        private void HideWithAnimator(bool onHideResult, Action onHide)
+        private void HideWithAnimator(Action onHide)
         {
             if (gameObject.activeSelf)
             {
                 Animator.SetTrigger(ANIMATOR_TRIGGER_HIDE);
                 _context?.StartCoroutineActionAfterPredicate(() => {
                     Hide();
-                    if (onHideResult)
-                        onHide?.Invoke();
+                    onHide?.Invoke();
                 }, () => gameObject.activeSelf);
             }
         }

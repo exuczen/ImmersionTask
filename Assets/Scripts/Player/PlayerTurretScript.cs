@@ -53,7 +53,7 @@ public class PlayerTurretScript : MonoBehaviour
                 arm.rotation = Quaternion.LookRotation(ray, transform.parent.up);
 
                 localEuler = Maths.AnglesModulo360(arm.localRotation.eulerAngles);
-                localEuler = Maths.Clamp(localEuler, new Vector3(-180, -70, -180), new Vector3(180, 70, 180));
+                localEuler = Mathv.Clamp(localEuler, new Vector3(-180, -70, -180), new Vector3(180, 70, 180));
                 arm.localRotation = Quaternion.Euler(localEuler);
             }
         }
