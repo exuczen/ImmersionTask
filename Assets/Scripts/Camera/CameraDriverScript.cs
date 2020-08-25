@@ -5,16 +5,15 @@ using MustHave;
 
 public class CameraDriverScript : MonoBehaviour
 {
-    private const float MOUSE_ROTATION_RATE = 240f;
     private const float TRANSLATION_DAMPING = 10f;
     private const float ROTATION_DAMPING = 15f;
 
-    public void UpdateTransformRotationWithMouse(float mouseY, float deltaTime)
+    public void UpdateTransformRotationWithMouse(float mouseY, float rotationRate)
     {
         Vector3 eulerAngles = transform.eulerAngles;
         if (mouseY != 0f)
         {
-            eulerAngles.x += mouseY * MOUSE_ROTATION_RATE * deltaTime;
+            eulerAngles.x += mouseY * rotationRate;
             eulerAngles.x = Maths.AngleModulo360(eulerAngles.x);
             eulerAngles.x = Mathf.Clamp(eulerAngles.x, -15f, 90f);
         }

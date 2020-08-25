@@ -9,7 +9,7 @@ namespace MustHave
         [SerializeField] private float _translationSpeed = default;
         [SerializeField] private float _zoomSpeed = default;
 
-        private const float ROTATION_RATE = 240f;
+        private const float ROTATION_RATE = 4.8f;
 
         private Camera _camera = default;
         private Vector3 _mousePositionPrev = default;
@@ -47,8 +47,8 @@ namespace MustHave
                 if (Input.GetKey(KeyCode.LeftAlt) &&
                     Maths.GetRayIntersectionWithPlane(transform.position, transform.forward, Vector3.up, Vector3.zero, out Vector3 rotationPivot))
                 {
-                    transform.RotateAround(rotationPivot, transform.right, -mouseY * ROTATION_RATE * Time.deltaTime);
-                    transform.RotateAround(rotationPivot, Vector3.up, mouseX * ROTATION_RATE * Time.deltaTime);
+                    transform.RotateAround(rotationPivot, transform.right, -mouseY * ROTATION_RATE);
+                    transform.RotateAround(rotationPivot, Vector3.up, mouseX * ROTATION_RATE);
                 }
             }
             Vector2 mouseScrollDelta = Input.mouseScrollDelta;

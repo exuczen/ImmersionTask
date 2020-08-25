@@ -13,7 +13,7 @@ public class PlayerControllerScript : MonoBehaviour
     protected CameraDriverScript _cameraDriver = default;
     protected Rigidbody _rigidbody = default;
 
-    private const float MOUSE_ROTATION_RATE = 240f;
+    private const float MOUSE_ROTATION_RATE = 4.8f;
     private const float TURN_SPEED = 2.0f;
     private const float TURN_ACCELERATION = 10f;
     private const float JUMP_HEIGHT = 1.35f;
@@ -56,7 +56,7 @@ public class PlayerControllerScript : MonoBehaviour
             "\nAngular Velocity: " + _rigidbody.angularVelocity.ToString("F2");
     }
 
-    private void UpdateTransformRotationWithMouse(float deltaTime)
+    private void UpdateTransformRotationWithMouse()
     {
         Vector3 localEuler = transform.localEulerAngles;
         localEuler.x = localEuler.z = 0f;
@@ -65,11 +65,11 @@ public class PlayerControllerScript : MonoBehaviour
         {
             mouseY = Input.GetAxis("Mouse Y");
             mouseX = Input.GetAxis("Mouse X");
-            localEuler.y -= mouseX * MOUSE_ROTATION_RATE * deltaTime;
+            localEuler.y -= mouseX * MOUSE_ROTATION_RATE;
         }
         transform.localEulerAngles = localEuler;
         if (_cameraDriver)
-            _cameraDriver.UpdateTransformRotationWithMouse(mouseY, deltaTime);
+            _cameraDriver.UpdateTransformRotationWithMouse(mouseY, MOUSE_ROTATION_RATE);
     }
 
     private void JumpOnKeyDown(KeyCode keyCode)
@@ -150,7 +150,7 @@ public class PlayerControllerScript : MonoBehaviour
     private void FixedUpdate()
     {
         float fixedDeltaTime = Time.fixedDeltaTime;
-        UpdateTransformRotationWithMouse(fixedDeltaTime);
+        UpdateTransformRotationWithMouse();
         ResetRigidbodyRotationXZ();
         UpdateRigidbodyVelocity(fixedDeltaTime);
         UpdateRigidbodyAngularVelocity(fixedDeltaTime);
