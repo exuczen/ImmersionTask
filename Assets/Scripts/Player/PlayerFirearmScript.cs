@@ -32,12 +32,11 @@ public class PlayerFirearmScript : MonoBehaviour
 
     private void Update()
     {
-        bool lockKeyUp = !Input.GetKey(KeyCode.LeftShift);
-        if (Input.GetMouseButtonDown(_mouseButtonIndex) && lockKeyUp)
+        if (Input.GetMouseButtonDown(_mouseButtonIndex))
         {
             StartShooting();
         }
-        _isShooting = Input.GetMouseButton(_mouseButtonIndex) && lockKeyUp;
+        _isShooting = Input.GetMouseButton(_mouseButtonIndex);
     }
 
     private void StartShooting()
